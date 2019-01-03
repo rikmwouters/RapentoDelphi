@@ -1,0 +1,106 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object GenusLabel: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 40.000000000000000000
+    Text = 'Genus'
+    TabOrder = 0
+  end
+  object SpeciesLabel: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 72.000000000000000000
+    Text = 'Species'
+    TabOrder = 1
+  end
+  object GenusInput: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 120.000000000000000000
+    Position.Y = 40.000000000000000000
+  end
+  object SpeciesInput: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Position.X = 120.000000000000000000
+    Position.Y = 72.000000000000000000
+  end
+  object SubmitButton: TButton
+    Position.X = 56.000000000000000000
+    Position.Y = 208.000000000000000000
+    TabOrder = 4
+    Text = 'Submit'
+    OnClick = SubmitButtonClick
+  end
+  object ColNameLabel: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 104.000000000000000000
+    Text = 'Collection name'
+    TabOrder = 5
+  end
+  object ColNameInput: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    Position.X = 120.000000000000000000
+    Position.Y = 104.000000000000000000
+  end
+  object ColDateLabel: TLabel
+    Position.X = 408.000000000000000000
+    Position.Y = 48.000000000000000000
+    Text = 'Collection date'
+    TabOrder = 9
+  end
+  object Calendar1: TCalendar
+    Date = 43468.000000000000000000
+    Position.X = 408.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 180.000000000000000000
+    Size.Height = 160.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+  end
+  object ColTimeLabel: TLabel
+    Position.X = 408.000000000000000000
+    Position.Y = 16.000000000000000000
+    Text = 'Collection time'
+    TabOrder = 12
+  end
+  object TimeEdit1: TTimeEdit
+    Time = 0.625605937500000000
+    Position.X = 504.000000000000000000
+    Position.Y = 16.000000000000000000
+    TabOrder = 13
+  end
+  object ADO_Connection: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Data Source=localhost;Initial Catalog=Rapento;Integrated Securit' +
+      'y=SSPI;'
+    DefaultDatabase = 'master'
+    LoginPrompt = False
+    Provider = 'MSOLEDBSQL.1'
+    Left = 96
+    Top = 376
+  end
+  object StoredProc_AddIndividual: TADOStoredProc
+    ConnectionString = 
+      'Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Initial Catalog=R' +
+      'apento;Data Source=localhost;Use Procedure for Prepare=1;Auto Tr' +
+      'anslate=True;Packet Size=4096;Workstation ID=HP400PD09;Use Encry' +
+      'ption for Data=False;Tag with column collation when possible=Fal' +
+      'se;MARS Connection=False;DataTypeCompatibility=0;Trust Server Ce' +
+      'rtificate=False;Application Intent=READWRITE;MultisubnetFailover' +
+      '=False;Use FMTONLY=False;'
+    ProcedureName = 'AddIndividual'
+    Parameters = <>
+    Left = 136
+    Top = 376
+  end
+end
